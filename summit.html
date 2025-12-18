@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HuFeed Mobile App - Portfolio Details</title>
+    <link href="https://fonts.googleapis.com" rel="preconnect">
+    <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700&family=Fira+Code:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="port.css">
+</head>
+<!-- IMAGE POPUP MODAL -->
+<div id="imageModal" class="image-modal">
+    <span class="image-modal-close">&times;</span>
+    <img class="image-modal-content" id="modalImg">
+</div>
+
+<body>
+    <!-- HEADER/NAVIGATION -->
+    <header class="header">
+        <div class="header-content">
+            <div class="profile-section">
+                <div class="profile-img">
+                   <img src="img/abeni.JPG" alt="Profile">
+                </div>
+                <div class="profile-name">
+                    <h1>Abenezer</h1>
+                </div>
+                <p class="profile-title">Full Stack Developer</p>
+                <div class="social-links">
+                    <a href="#" title="GitHub"><i class="fab fa-github"></i></a>
+                    <a href="#" title="LinkedIn"><i class="fab fa-linkedin"></i></a>
+                    <a href="#" title="Twitter"><i class="fab fa-twitter"></i></a>
+                    <a href="#" title="Email"><i class="fas fa-envelope"></i></a>
+                </div>
+            </div>
+
+            <nav>
+                <ul>
+                    <li><a href="index.html#home" class="nav-link"><i class="fas fa-home"></i> Home</a></li>
+                    <li><a href="index.html#about" class="nav-link"><i class="fas fa-user"></i> About</a></li>
+                    <li><a href="index.html#skills" class="nav-link"><i class="fas fa-code"></i> Skills</a></li>
+                    <li><a href="index.html#portfolio" class="nav-link active"><i class="fas fa-briefcase"></i> Portfolio</a></li>
+                    <li><a href="index.html#services" class="nav-link"><i class="fas fa-cogs"></i> Services</a></li>
+                    <li><a href="index.html#contact" class="nav-link"><i class="fas fa-phone"></i> Contact</a></li>
+                </ul>
+            </nav>
+
+            <div class="theme-toggle">
+                <button class="toggle-btn" id="themeToggle">
+                    <i class="fas fa-moon"></i> Dark Mode
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <button class="menu-toggle" id="menuToggle">
+        <i class="fas fa-bars"></i>
+    </button>
+
+    <!-- MAIN CONTENT -->
+    <main>
+        <section>
+            <div class="container">
+                <a href="index.html#portfolio" class="nav-back">
+                    <i class="fas fa-arrow-left"></i>
+                    Back to Portfolio
+                </a>
+
+                <div class="project-hero">
+                    <h1>Summit et</h1>
+                    <div class="project-meta">
+                        <div class="meta-item">
+                            <i class="fas fa-calendar"></i>
+                            <span>Completed: 2024</span>
+                        </div>
+                        <div class="meta-item">
+                            <i class="fas fa-tag"></i>
+                            <span>Category: Website</span>
+                        </div>
+                        <div class="meta-item">
+                            <i class="fas fa-users"></i>
+                            <span>Users: 2000+</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- GALLERY -->
+                <div class="gallery">
+                    <div class="gallery-main">
+                       <img src="portimg/summit/2.png" alt="Summit.et E-commerce Platform Screenshot" style="width:100%; height:auto; border-radius: 8px; ">
+                    </div>
+                    <div class="gallery-thumbnails">
+                        <div class="thumbnail active">
+                            <img src="portimg/summit/1.png" alt="Thumbnail 1">
+                        </div>
+                        <div class="thumbnail">
+                            <img src="portimg/summit/3.png" alt="Thumbnail 1">
+                        </div>
+                        <div class="thumbnail">
+                           <img src="portimg/summit/4.png" alt="Thumbnail 1">
+                        </div>
+                    </div>
+                </div>
+
+                <!-- DETAILS GRID -->
+                <div class="details-grid">
+                    <div class="project-description">
+                        <h3>Project Overview</h3>
+                        <p>Summit et is an ecommerce webiste where users can order any custom clothes they want build with php, html, css, js and sql</p>
+                        
+                        <p>The platform has easy ui/ux for seamless integration and usage across devices and management. It has it's ow admin panel to manage products and orders and contacting users</p>
+
+                        <h3 style="margin-top: 40px; margin-bottom: 20px;">Key Features</h3>
+                        <ul class="features-list">
+                            <li>
+                                <i class="fas fa-check-circle"></i>
+                                <span><strong>Dynamic Homepage:</strong>Beautiful UI and dynamic hompage for visually apealing users</span>
+                            </li>
+                            <li>
+                                <i class="fas fa-check-circle"></i>
+                                <span><strong>Shoping :</strong> Access and search from lists of all available items</span>
+                            </li>
+                            <li>
+                                <i class="fas fa-check-circle"></i>
+                                <span><strong>Order placing:</strong> place any custom or choice oriented orders in the website</span>
+                            </li>
+                            <li>
+                                <i class="fas fa-check-circle"></i>
+                                <span><strong>Gallery:</strong>Access through all the galleries of the items</span>
+                            </li>
+                            <li>
+                                <i class="fas fa-check-circle"></i>
+                                <span><strong>Contact and about:</strong> Connect with the owners of the company</span>
+                            </li>
+                            <li>
+                                <i class="fas fa-check-circle"></i>
+                                <span><strong>Admin Pnael</strong> Admin panel to manage producs, galleries and orders</span>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div class="project-info">
+                        <div class="info-card">
+                            <h4>Tech Stack</h4>
+                            <div class="tech-stack">
+                                <span class="tech-badge">HTML5</span>
+                                <span class="tech-badge">Tailwind Css</span>
+                                <span class="tech-badge">PHP</span>
+                                <span class="tech-badge">SQL</span>
+                                <span class="tech-badge">JavaScript</span>
+                            </div>
+                        </div>
+
+                        <div class="info-card">
+                            <h4>Project Duration</h4>
+                            <p> 1 Month (From conception to launch)</p>
+                        </div>
+
+                        <div class="info-card">
+                            <h4>Team Size</h4>
+                            <p>Solo developer project with collaborative input from stakeholders</p>
+                        </div>
+
+                        <div class="info-card">
+                            <h4>Platforms</h4>
+                            <p>Webiste</p>
+                        </div>
+
+                        <div class="info-card">
+                            <h4>Status</h4>
+                            <p>✓ Live on <a href="https://summitet.free.nf/" style="text-decoration: none; color: rgb(24, 112, 255);">Summitet.free.nf</a></p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- CTA SECTION -->
+                <div class="cta-section">
+                    <h3>Interested in Your Next Project?</h3>
+                    <p>Let's work together to build something amazing. Whether you have a mobile app idea, need a web platform, or require backend development, I'm ready to bring your vision to life with cutting-edge technology and creative solutions.</p>
+                    <a href="index.html#contact" class="btn btn-primary">Start a Project</a>
+                    <a href="index.html#portfolio" class="btn btn-secondary">See More Projects</a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- FOOTER -->
+    <footer>
+        <p>&copy; 2025 Abenezer Tilahun. All rights reserved. Crafted with <span style="color: var(--danger);">❤</span> and code.</p>
+    </footer>
+
+    <script>
+        // Theme Toggle
+        const themeToggle = document.getElementById('themeToggle');
+        const body = document.body;
+
+        const savedTheme = localStorage.getItem('theme') || 'dark';
+        if (savedTheme === 'light') {
+            body.classList.add('light-mode');
+            themeToggle.innerHTML = '<i class="fas fa-sun"></i> Light Mode';
+        }
+
+        themeToggle.addEventListener('click', () => {
+            body.classList.toggle('light-mode');
+            const isLight = body.classList.contains('light-mode');
+            localStorage.setItem('theme', isLight ? 'light' : 'dark');
+            themeToggle.innerHTML = isLight 
+                ? '<i class="fas fa-sun"></i> Light Mode' 
+                : '<i class="fas fa-moon"></i> Dark Mode';
+        });
+
+        // Menu Toggle for Mobile
+        const menuToggle = document.getElementById('menuToggle');
+        const header = document.querySelector('.header');
+        menuToggle.addEventListener('click', () => {
+            header.classList.toggle('active');
+            menuToggle.classList.toggle('active');
+        });
+
+        // Close menu when nav link clicked
+        document.querySelectorAll('.nav-link').forEach(link => {
+            link.addEventListener('click', () => {
+                header.classList.remove('active');
+                menuToggle.classList.remove('active');
+            });
+        });
+
+        // Gallery thumbnail interaction
+        document.querySelectorAll('.thumbnail').forEach((thumb, index) => {
+            thumb.addEventListener('click', () => {
+                document.querySelectorAll('.thumbnail').forEach(t => t.classList.remove('active'));
+                thumb.classList.add('active');
+            });
+        });
+        const modal = document.getElementById("imageModal");
+const modalImg = document.getElementById("modalImg");
+const modalClose = document.querySelector(".image-modal-close");
+
+// Open modal when clicking main image
+document.querySelector(".gallery-main img").addEventListener("click", (e) => {
+    modal.style.display = "block";
+    modalImg.src = e.target.src;
+});
+
+// Open modal when clicking ANY image in thumbnails (if you add real thumbnails later)
+document.querySelectorAll(".gallery img").forEach(img => {
+    img.addEventListener("click", () => {
+        modal.style.display = "block";
+        modalImg.src = img.src;
+    });
+});
+
+// Close modal
+modalClose.onclick = () => { modal.style.display = "none"; };
+
+// Close modal when clicking outside image
+modal.onclick = (e) => {
+    if (e.target === modal) modal.style.display = "none";
+};
+    </script>
+</body>
+</html>
