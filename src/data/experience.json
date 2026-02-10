@@ -1,0 +1,110 @@
+{
+  "experience": [
+    {
+      "id": "exp-001",
+      "role": "Senior Software Engineer",
+      "company": "TechCorp International",
+      "location": "San Francisco, CA",
+      "startDate": "2022-01",
+      "endDate": "Present",
+      "current": true,
+      "description": "Leading development of cloud-native applications and mentoring junior developers.",
+      "highlights": [
+        "Architected microservices platform handling 10M+ daily requests",
+        "Reduced API response times by 60% through optimization",
+        "Led team of 5 engineers on critical product features",
+        "Implemented CI/CD pipelines reducing deployment time by 75%"
+      ],
+      "technologies": ["React", "Node.js", "Kubernetes", "PostgreSQL", "AWS"]
+    },
+    {
+      "id": "exp-002",
+      "role": "Full Stack Developer",
+      "company": "StartupXYZ",
+      "location": "Austin, TX",
+      "startDate": "2020-03",
+      "endDate": "2021-12",
+      "current": false,
+      "description": "Built and maintained full-stack applications for early-stage startup.",
+      "highlights": [
+        "Developed MVP that secured $2M seed funding",
+        "Built real-time collaboration features using WebSocket",
+        "Integrated third-party APIs (Stripe, Twilio, SendGrid)",
+        "Improved test coverage from 20% to 85%"
+      ],
+      "technologies": ["Vue.js", "Python", "Django", "MongoDB", "Docker"]
+    },
+    {
+      "id": "exp-003",
+      "role": "Software Developer",
+      "company": "Digital Solutions Inc.",
+      "location": "Remote",
+      "startDate": "2018-06",
+      "endDate": "2020-02",
+      "current": false,
+      "description": "Developed web applications and contributed to open-source projects.",
+      "highlights": [
+        "Contributed to 3 major open-source libraries",
+        "Built e-commerce platform with 50K+ monthly users",
+        "Implemented responsive designs for mobile-first experience",
+        "Reduced page load time by 40% through optimization"
+      ],
+      "technologies": ["React", "Node.js", "Express", "MySQL", "Redis"]
+    },
+    {
+      "id": "exp-004",
+      "role": "Junior Developer",
+      "company": "Web Agency Pro",
+      "location": "New York, NY",
+      "startDate": "2017-01",
+      "endDate": "2018-05",
+      "current": false,
+      "description": "Started career building websites and learning best practices.",
+      "highlights": [
+        "Delivered 20+ client websites on time and budget",
+        "Learned modern JavaScript frameworks",
+        "Collaborated with design team on UI/UX improvements",
+        "Maintained legacy PHP applications"
+      ],
+      "technologies": ["JavaScript", "PHP", "WordPress", "jQuery", "CSS"]
+    }
+  ],
+  "education": [
+    {
+      "id": "edu-001",
+      "degree": "B.S. Computer Science",
+      "institution": "University of Technology",
+      "location": "San Francisco, CA",
+      "startDate": "2013",
+      "endDate": "2017",
+      "highlights": [
+        "GPA: 3.8/4.0",
+        "Dean's List: 6 semesters",
+        "Senior Project: Distributed Computing System"
+      ]
+    }
+  ],
+  "certifications": [
+    {
+      "id": "cert-001",
+      "name": "AWS Solutions Architect",
+      "issuer": "Amazon Web Services",
+      "date": "2023",
+      "credentialId": "AWS-SAA-12345"
+    },
+    {
+      "id": "cert-002",
+      "name": "Google Cloud Professional",
+      "issuer": "Google",
+      "date": "2022",
+      "credentialId": "GCP-PRO-67890"
+    },
+    {
+      "id": "cert-003",
+      "name": "Kubernetes Administrator (CKA)",
+      "issuer": "CNCF",
+      "date": "2023",
+      "credentialId": "CKA-2023-11111"
+    }
+  ]
+}
