@@ -4,6 +4,7 @@ import { MainLayout } from "@/components/layout/MainLayout";
 import { GlitchText } from "@/components/animations/GlitchText";
 import { TypewriterText } from "@/components/animations/TypewriterText";
 import { TerminalWindow } from "@/components/ui/TerminalWindow";
+import { SEO } from "@/components/SEO";
 import { useApi, api } from "@/hooks/useApi";
 import { ArrowRight, Terminal, Code, Cpu, Database } from "lucide-react";
 interface SocialData {
@@ -93,6 +94,12 @@ export const Home = () => {
 
   return (
     <MainLayout>
+      <SEO
+        title="Abenezer Tilahun - Software Engineer | Ethiopia, Addis Ababa"
+        description="Abenezer Tilahun is a professional Software Engineer based in Addis Ababa, Ethiopia. Expert in full-stack development, React, TypeScript, and modern web technologies. View portfolio and projects."
+        keywords="Abenezer Tilahun, Software Engineer, Ethiopia, Addis Ababa, Full Stack Developer, React Developer, TypeScript, Web Developer, Ethiopian Developer, Software Development Ethiopia"
+        url="https://abeno.me/"
+      />
       <div className="min-h-[calc(100vh-4rem)] flex flex-col justify-center">
         {/* Hero Section */}
         <div className="space-y-8">

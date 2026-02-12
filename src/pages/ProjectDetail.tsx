@@ -2,6 +2,8 @@ import { useParams, Link } from 'react-router-dom';
 import { MainLayout } from '@/components/layout/MainLayout';
 import { GlitchText } from '@/components/animations/GlitchText';
 import { TerminalWindow } from '@/components/ui/TerminalWindow';
+import { SEO } from '@/components/SEO';
+import { ProjectSchema } from '@/components/StructuredData';
 import { useApi, api } from '@/hooks/useApi';
 import { ArrowLeft, ExternalLink, Github, Calendar, User, Tag } from 'lucide-react';
 
@@ -69,6 +71,14 @@ export const ProjectDetail = () => {
 
   return (
     <MainLayout>
+      <SEO
+        title={`${project.title} - Project`}
+        description={project.description || project.longDescription}
+        keywords={`${project.title}, ${project.technologies.join(', ')}, Abenezer Tilahun Project, ${project.category}`}
+        url={`https://abeno.me/portfolio/${project.slug}`}
+        type="article"
+      />
+      <ProjectSchema project={project} />
       <div className="space-y-8 max-w-4xl">
         {/* Back Link */}
         <Link 

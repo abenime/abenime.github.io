@@ -2,6 +2,7 @@ import { useState } from 'react';
 import { MainLayout } from '@/components/layout/MainLayout';
 import { GlitchText } from '@/components/animations/GlitchText';
 import { ProjectCard } from '@/components/ui/ProjectCard';
+import { SEO } from '@/components/SEO';
 import { useApi, api } from '@/hooks/useApi';
 import { Filter, Grid, List, Search } from 'lucide-react';
 
@@ -41,6 +42,12 @@ export const Portfolio = () => {
 
   return (
     <MainLayout>
+      <SEO
+        title="Portfolio - Projects & Work"
+        description="Explore the portfolio of Abenezer Tilahun, showcasing web applications, mobile apps, UI/UX designs, and software projects built with React, TypeScript, and modern technologies."
+        keywords="Abenezer Tilahun Portfolio, Software Projects Ethiopia, React Projects, Web Development Portfolio, Ethiopian Developer Projects, Full Stack Projects"
+        url="https://abeno.me/portfolio"
+      />
       <div className="space-y-8">
         {/* Header */}
         <div className="space-y-4">
