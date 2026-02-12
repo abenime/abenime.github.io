@@ -62,12 +62,32 @@ This project is built with:
 
 ## How can I deploy this project?
 
-Simply open [Lovable](https://lovable.dev/projects/REPLACE_WITH_PROJECT_ID) and click on Share -> Publish.
+This project is configured to deploy to GitHub Pages using GitHub Actions.
+
+### Setting up GitHub Pages deployment
+
+1. Go to your repository settings on GitHub
+2. Navigate to **Pages** in the left sidebar
+3. Under **Build and deployment**:
+   - Source: Select "GitHub Actions"
+4. Once you merge this PR to the main branch, the workflow will automatically build and deploy your site
+5. Your site will be available at `https://abeno.me` (via your custom CNAME) or `https://[username].github.io`
+
+The GitHub Actions workflow (`.github/workflows/deploy.yml`) will automatically:
+- Install dependencies
+- Build the React app
+- Deploy the `dist` folder to GitHub Pages
+
+### Manual deployment (alternative)
+
+Alternatively, you can use [Lovable](https://lovable.dev/projects/REPLACE_WITH_PROJECT_ID) and click on Share -> Publish.
 
 ## Can I connect a custom domain to my Lovable project?
 
 Yes, you can!
 
 To connect a domain, navigate to Project > Settings > Domains and click Connect Domain.
+
+The custom domain `abeno.me` is already configured via the `CNAME` file.
 
 Read more here: [Setting up a custom domain](https://docs.lovable.dev/features/custom-domain#custom-domain)
