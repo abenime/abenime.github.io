@@ -1,6 +1,7 @@
 import { useState, useRef, useEffect } from "react";
 import { MainLayout } from "@/components/layout/MainLayout";
 import { GlitchText } from "@/components/animations/GlitchText";
+import { SEO } from "@/components/SEO";
 import { useApi, api } from "@/hooks/useApi";
 import { Github, Linkedin, Twitter, Mail, MapPin, Send } from "lucide-react";
 
@@ -240,6 +241,12 @@ export const Contact = () => {
 
   return (
     <MainLayout>
+      <SEO
+        title="Contact Abenezer Tilahun"
+        description="Get in touch with Abenezer Tilahun, Software Engineer based in Addis Ababa, Ethiopia. Available for freelance projects, collaboration, and software development opportunities."
+        keywords="Contact Abenezer Tilahun, Hire Software Engineer Ethiopia, Ethiopian Developer Contact, Software Engineer Addis Ababa, Freelance Developer Ethiopia"
+        url="https://abeno.me/contact"
+      />
       <div className="space-y-8">
         {/* Header */}
         <div className="space-y-4">

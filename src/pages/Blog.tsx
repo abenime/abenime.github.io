@@ -2,6 +2,7 @@ import { useState } from 'react';
 import { MainLayout } from '@/components/layout/MainLayout';
 import { GlitchText } from '@/components/animations/GlitchText';
 import { BlogCard } from '@/components/ui/BlogCard';
+import { SEO } from '@/components/SEO';
 import { useApi, api } from '@/hooks/useApi';
 import { Search, Tag, Calendar } from 'lucide-react';
 
@@ -42,6 +43,12 @@ export const Blog = () => {
 
   return (
     <MainLayout>
+      <SEO
+        title="Blog - Articles & Insights"
+        description="Read articles and technical insights from Abenezer Tilahun on software engineering, web development, React, TypeScript, and technology trends in Ethiopia."
+        keywords="Abenezer Tilahun Blog, Software Engineering Blog, Web Development Articles, React Tutorials, TypeScript Tips, Ethiopian Tech Blog"
+        url="https://abeno.me/blog"
+      />
       <div className="space-y-8">
         {/* Header */}
         <div className="space-y-4">
