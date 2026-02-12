@@ -2,6 +2,8 @@ import { useParams, Link } from 'react-router-dom';
 import { MainLayout } from '@/components/layout/MainLayout';
 import { GlitchText } from '@/components/animations/GlitchText';
 import { TerminalWindow } from '@/components/ui/TerminalWindow';
+import { SEO } from '@/components/SEO';
+import { BlogSchema } from '@/components/StructuredData';
 import { useApi, api } from '@/hooks/useApi';
 import { ArrowLeft, Calendar, Clock, User, Tag } from 'lucide-react';
 
@@ -103,6 +105,15 @@ export const BlogDetail = () => {
 
   return (
     <MainLayout>
+      <SEO
+        title={post.title}
+        description={post.excerpt}
+        keywords={`${post.tags.join(', ')}, Abenezer Tilahun Blog, ${post.category}`}
+        url={`https://abeno.me/blog/${post.slug}`}
+        type="article"
+        author={post.author}
+      />
+      <BlogSchema post={post} />
       <div className="space-y-8 max-w-4xl">
         {/* Back Link */}
         <Link 

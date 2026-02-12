@@ -3,6 +3,7 @@ import { MainLayout } from "@/components/layout/MainLayout";
 import { GlitchText } from "@/components/animations/GlitchText";
 import { TerminalWindow } from "@/components/ui/TerminalWindow";
 import { SkillBar } from "@/components/ui/SkillBar";
+import { SEO } from "@/components/SEO";
 import { useApi, api } from "@/hooks/useApi";
 import {
   Briefcase,
@@ -115,6 +116,12 @@ export const About = () => {
 
   return (
     <MainLayout>
+      <SEO
+        title="About Abenezer Tilahun"
+        description="Learn more about Abenezer Tilahun, a Software Engineer from Addis Ababa, Ethiopia. Discover skills, experience, education, and certifications in full-stack development, React, TypeScript, and more."
+        keywords="Abenezer Tilahun, About, Skills, Experience, Education, Software Engineer Ethiopia, Full Stack Developer Addis Ababa, React Developer, TypeScript Expert"
+        url="https://abeno.me/about"
+      />
       <div className="space-y-8">
         {/* Header */}
         <div className="space-y-4">
