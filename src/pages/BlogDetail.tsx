@@ -3,6 +3,7 @@ import { MainLayout } from '@/components/layout/MainLayout';
 import { GlitchText } from '@/components/animations/GlitchText';
 import { TerminalWindow } from '@/components/ui/TerminalWindow';
 import { SEO } from '@/components/SEO';
+import { BlogSchema } from '@/components/StructuredData';
 import { useApi, api } from '@/hooks/useApi';
 import { ArrowLeft, Calendar, Clock, User, Tag } from 'lucide-react';
 
@@ -112,6 +113,7 @@ export const BlogDetail = () => {
         type="article"
         author={post.author}
       />
+      <BlogSchema post={post} />
       <div className="space-y-8 max-w-4xl">
         {/* Back Link */}
         <Link 
