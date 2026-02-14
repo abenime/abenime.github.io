@@ -108,6 +108,7 @@ export const Home = () => {
         keywords="Abenezer Tilahun, Software Engineer, Ethiopia, Addis Ababa, Full Stack Developer, React Developer, TypeScript, Web Developer, Ethiopian Developer, Software Development Ethiopia"
         url="https://abeno.me/"
       />
+      <h2 className="sr-only">{profileBio}</h2>
       <div className="min-h-[calc(100vh-4rem)] flex flex-col justify-center">
         {/* Hero Section */}
         <div className="space-y-8">
