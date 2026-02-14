@@ -3,30 +3,30 @@
     {
       "id": "github",
       "name": "GitHub",
-      "url": "https://github.com/abenezer",
+      "url": "https://github.com/abenime",
       "icon": "Github",
-      "username": "@abenezer"
+      "username": "@abenime"
     },
     {
       "id": "linkedin",
       "name": "LinkedIn",
-      "url": "https://linkedin.com/in/abenezer",
+      "url": "https://linkedin.com/in/abenime",
       "icon": "Linkedin",
-      "username": "abenezer-tilahun"
+      "username": "abenime"
     },
     {
       "id": "twitter",
-      "name": "Twitter/X",
-      "url": "https://twitter.com/abenezer",
+      "name": "X/Twitter",
+      "url": "https://x.com/abenime0",
       "icon": "Twitter",
-      "username": "@abenezer_dev"
+      "username": "@abenime0"
     },
     {
       "id": "email",
       "name": "Email",
-      "url": "mailto:abenezer@example.com",
+      "url": "mailto:abenezerabc@gmail.com",
       "icon": "Mail",
-      "username": "abenezer@example.com"
+      "username": "abenezerabc@gmail.com"
     }
   ],
   "stats": {
