@@ -96,10 +96,10 @@ interface SocialData {
 
 export const About = () => {
   const { data: skillsData, loading: skillsLoading } = useApi<SkillsData>(
-    api.getSkills
+    api.getSkills,
   );
   const { data: experienceData, loading: expLoading } = useApi<ExperienceData>(
-    api.getExperience
+    api.getExperience,
   );
   const { data: socialData } = useApi<SocialData>(api.getSocial);
   const [activeTab, setActiveTab] = useState<
@@ -261,28 +261,33 @@ export const About = () => {
                 </div>
               ) : (
                 <div className="grid gap-6 md:grid-cols-2">
-                  {[leftSkillGroups, rightSkillGroups].map((group, groupIndex) => (
-                    <div key={groupIndex} className="space-y-6">
-                      {group.map((category, catIndex) => (
-                        <div key={`${category.name}-${catIndex}`} className="space-y-4">
-                          <h3 className="font-mono text-lg text-primary flex items-center gap-2">
-                            <span className="text-terminal-green">#</span>
-                            {category.name}
-                          </h3>
-                          <div className="grid gap-3">
-                            {category.skills.map((skill, skillIndex) => (
-                              <SkillBar
-                                key={`${category.name}-${skillIndex}`}
-                                name={skill.name}
-                                level={skill.level}
-                                years={skill.years}
-                              />
-                            ))}
+                  {[leftSkillGroups, rightSkillGroups].map(
+                    (group, groupIndex) => (
+                      <div key={groupIndex} className="space-y-6">
+                        {group.map((category, catIndex) => (
+                          <div
+                            key={`${category.name}-${catIndex}`}
+                            className="space-y-4"
+                          >
+                            <h3 className="font-mono text-lg text-primary flex items-center gap-2">
+                              <span className="text-terminal-green">#</span>
+                              {category.name}
+                            </h3>
+                            <div className="grid gap-3">
+                              {category.skills.map((skill, skillIndex) => (
+                                <SkillBar
+                                  key={`${category.name}-${skillIndex}`}
+                                  name={skill.name}
+                                  level={skill.level}
+                                  years={skill.years}
+                                />
+                              ))}
+                            </div>
                           </div>
-                        </div>
-                      ))}
-                    </div>
-                  ))}
+                        ))}
+                      </div>
+                    ),
+                  )}
                 </div>
               )}
             </div>
