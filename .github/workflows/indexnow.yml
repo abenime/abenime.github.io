@@ -1,0 +1,27 @@
+name: IndexNow Update
+
+on:
+  push:
+    branches:
+      - main  # Runs every time you push to the main branch
+
+jobs:
+  ping-indexnow:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Send POST request to IndexNow
+        run: |
+          curl -X POST "https://api.indexnow.org/indexnow" \
+          -H "Content-Type: application/json; charset=utf-8" \
+          -d '{
+            "host": "abeno.me",
+            "key": "e182ab1571d645819876f7f2e0c59c21",
+            "keyLocation": "https://abeno.me/e182ab1571d645819876f7f2e0c59c21.txt",
+            "urlList": [
+              "https://abeno.me/",
+              "https://abeno.me/about",
+              "https://abeno.me/portfolio",
+              "https://abeno.me/blog",
+              "https://abeno.me/contact"
+            ]
+          }'
