@@ -14,6 +14,7 @@ const iconMap: { [key: string]: React.ComponentType<{ className?: string }> } =
   };
 
 interface TerminalLine {
+  id?: string;
   type: "input" | "output" | "error" | "success";
   content: string;
 }
@@ -61,6 +62,19 @@ export const Contact = () => {
       terminalRef.current.scrollTop = terminalRef.current.scrollHeight;
     }
   }, [history]);
+
+  const updateLineContent = (id: string, content: string) => {
+    setHistory((prev) =>
+      prev.map((line) => (line.id === id ? { ...line, content } : line)),
+    );
+  };
+
+  const renderProgressBar = (percent: number) => {
+    const barLength = 28;
+    const filled = Math.round((percent / 100) * barLength);
+    const bar = "█".repeat(filled) + " ".repeat(barLength - filled);
+    return `${bar} ${percent}%`;
+  };
 
   const processCommand = (cmd: string) => {
     const trimmedCmd = cmd.trim().toLowerCase();
@@ -167,7 +181,7 @@ export const Contact = () => {
           ];
           break;
 
-        case "send":
+        case "send": {
           const message = parts.slice(1).join(" ");
           if (message.length < 3) {
             response = [
@@ -177,21 +191,41 @@ export const Contact = () => {
               },
             ];
           } else {
-            response = [
+            const progressId = `progress-${Date.now()}`;
+            setHistory((prev) => [
+              ...prev,
               { type: "output", content: "Processing message..." },
-              {
-                type: "output",
-                content: "████████████████████████████████ 100%",
-              },
-              { type: "success", content: "✓ Message sent successfully!" },
-              {
-                type: "output",
-                content:
-                  "Thank you for reaching out. I'll get back to you soon!",
-              },
-            ];
+              { id: progressId, type: "output", content: renderProgressBar(0) },
+            ]);
+
+            const totalSteps = 20;
+            let step = 0;
+            const interval = setInterval(() => {
+              step += 1;
+              const percent = Math.min(
+                100,
+                Math.round((step / totalSteps) * 100),
+              );
+              updateLineContent(progressId, renderProgressBar(percent));
+              if (percent >= 100) {
+                clearInterval(interval);
+                setHistory((prev) => [
+                  ...prev,
+                  { type: "success", content: "✓ Message sent successfully!" },
+                  {
+                    type: "output",
+                    content:
+                      "Thank you for reaching out. I'll get back to you soon!",
+                  },
+                  { type: "output", content: "" },
+                ]);
+                setIsProcessing(false);
+              }
+            }, 120);
+            return;
           }
           break;
+        }
 
         case "clear":
           setHistory([]);
@@ -296,10 +330,10 @@ export const Contact = () => {
                       line.type === "input"
                         ? "text-terminal-green"
                         : line.type === "error"
-                        ? "text-destructive"
-                        : line.type === "success"
-                        ? "text-terminal-green"
-                        : "text-foreground"
+                          ? "text-destructive"
+                          : line.type === "success"
+                            ? "text-terminal-green"
+                            : "text-foreground"
                     }`}
                   >
                     {line.content || "\u00A0"}
@@ -309,16 +343,22 @@ export const Contact = () => {
                 {/* Input Line */}
                 <form onSubmit={handleSubmit} className="flex items-center">
                   <span className="text-terminal-green">$ </span>
-                  <input
-                    ref={inputRef}
-                    type="text"
-                    value={input}
-                    onChange={(e) => setInput(e.target.value)}
-                    disabled={isProcessing}
-                    className="flex-1 bg-transparent border-none outline-none text-foreground ml-1"
-                    autoFocus
-                  />
-                  <span className="terminal-cursor">_</span>
+                  <div className="relative flex-1 ml-1">
+                    <span className="text-foreground whitespace-pre">
+                      {input.length > 0 ? input : "\u00A0"}
+                    </span>
+                    <span className="terminal-cursor">_</span>
+                    <input
+                      ref={inputRef}
+                      type="text"
+                      value={input}
+                      onChange={(e) => setInput(e.target.value)}
+                      disabled={isProcessing}
+                      className="absolute inset-0 w-full bg-transparent border-none outline-none opacity-0"
+                      style={{ caretColor: "transparent" }}
+                      autoFocus
+                    />
+                  </div>
                 </form>
               </div>
             </div>

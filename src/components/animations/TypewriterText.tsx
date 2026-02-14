@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect } from "react";
 
 interface TypewriterTextProps {
   text: string;
@@ -13,11 +13,11 @@ export const TypewriterText = ({
   text,
   speed = 50,
   delay = 0,
-  className = '',
+  className = "",
   showCursor = true,
   onComplete,
 }: TypewriterTextProps) => {
-  const [displayText, setDisplayText] = useState('');
+  const [displayText, setDisplayText] = useState("");
   const [isTyping, setIsTyping] = useState(false);
 
   useEffect(() => {
@@ -47,8 +47,8 @@ export const TypewriterText = ({
   return (
     <span className={className}>
       {displayText}
-      {showCursor && (
-        <span className={`inline-block w-2 h-5 bg-primary ml-1 ${isTyping ? 'animate-blink' : ''}`} />
+      {showCursor && isTyping && (
+        <span className="inline-block w-2 h-5 bg-primary ml-1 animate-blink" />
       )}
     </span>
   );

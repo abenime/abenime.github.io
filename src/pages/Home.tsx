@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useCallback, useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import { MainLayout } from "@/components/layout/MainLayout";
 import { GlitchText } from "@/components/animations/GlitchText";
@@ -38,6 +38,7 @@ export const Home = () => {
   const { data: socialData } = useApi<SocialData>(api.getSocial);
   const [showContent, setShowContent] = useState(false);
   const [currentCommand, setCurrentCommand] = useState(0);
+  const [isTyping, setIsTyping] = useState(false);
   const profile = socialData?.profile;
   const stats = socialData?.stats;
   const profileName = profile?.name ?? "Loading...";
@@ -59,13 +60,20 @@ export const Home = () => {
   }, []);
 
   useEffect(() => {
-    if (showContent && currentCommand < commands.length) {
-      const timer = setTimeout(() => {
-        setCurrentCommand((prev) => prev + 1);
-      }, 1500);
-      return () => clearTimeout(timer);
+    if (!showContent) {
+      return;
+    }
+    if (currentCommand < commands.length) {
+      setIsTyping(true);
     }
   }, [showContent, currentCommand, commands.length]);
+
+  const handleCommandComplete = useCallback(() => {
+    setIsTyping(false);
+    setTimeout(() => {
+      setCurrentCommand((prev) => prev + 1);
+    }, 300);
+  }, []);
 
   const statItems = [
     {
@@ -131,22 +139,25 @@ export const Home = () => {
               {commands.slice(0, currentCommand).map((cmd, index) => (
                 <div key={index} className="space-y-1">
                   <div className="text-terminal-green">{cmd.cmd}</div>
-                  <div className="text-foreground pl-4">
-                    {index === currentCommand - 1 ? (
-                      <TypewriterText text={cmd.output} speed={50} />
-                    ) : (
-                      cmd.output
-                    )}
-                  </div>
+                  <div className="text-foreground pl-4">{cmd.output}</div>
                 </div>
               ))}
               {currentCommand < commands.length && (
-                <div className="flex items-center text-terminal-green">
-                  <span>{commands[currentCommand].cmd}</span>
-                  <span className="terminal-cursor ml-1">_</span>
+                <div className="space-y-1">
+                  <div className="text-terminal-green">
+                    {commands[currentCommand].cmd}
+                  </div>
+                  <div className="text-foreground pl-4">
+                    <TypewriterText
+                      key={`cmd-${currentCommand}`}
+                      text={commands[currentCommand].output}
+                      speed={50}
+                      onComplete={handleCommandComplete}
+                    />
+                  </div>
                 </div>
               )}
-              {currentCommand >= commands.length && (
+              {currentCommand >= commands.length && !isTyping && (
                 <div className="flex items-center text-terminal-green">
                   <span>$ </span>
                   <span className="terminal-cursor ml-1">_</span>
