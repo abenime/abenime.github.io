@@ -114,6 +114,9 @@ export const About = () => {
     { id: "education", label: "./education.md", icon: GraduationCap },
   ];
 
+  const leftSkillGroups = skillsData?.categories?.slice(0, 2) ?? [];
+  const rightSkillGroups = skillsData?.categories?.slice(2, 4) ?? [];
+
   return (
     <MainLayout>
       <SEO
@@ -240,37 +243,47 @@ export const About = () => {
           {activeTab === "skills" && (
             <div className="space-y-8">
               {skillsLoading ? (
-                <div className="space-y-4">
-                  {[1, 2, 3].map((i) => (
-                    <div key={i} className="animate-pulse">
-                      <div className="h-4 bg-muted w-32 mb-4" />
-                      <div className="space-y-3">
-                        {[1, 2, 3].map((j) => (
-                          <div key={j} className="h-8 bg-muted" />
-                        ))}
-                      </div>
+                <div className="grid gap-6 md:grid-cols-2">
+                  {[1, 2].map((column) => (
+                    <div key={column} className="space-y-6">
+                      {[1, 2].map((i) => (
+                        <div key={i} className="animate-pulse">
+                          <div className="h-4 bg-muted w-32 mb-4" />
+                          <div className="space-y-3">
+                            {[1, 2, 3].map((j) => (
+                              <div key={j} className="h-8 bg-muted" />
+                            ))}
+                          </div>
+                        </div>
+                      ))}
                     </div>
                   ))}
                 </div>
               ) : (
-                skillsData?.categories?.map((category, catIndex) => (
-                  <div key={catIndex} className="space-y-4">
-                    <h3 className="font-mono text-lg text-primary flex items-center gap-2">
-                      <span className="text-terminal-green">#</span>
-                      {category.name}
-                    </h3>
-                    <div className="grid gap-3">
-                      {category.skills.map((skill, skillIndex) => (
-                        <SkillBar
-                          key={skillIndex}
-                          name={skill.name}
-                          level={skill.level}
-                          years={skill.years}
-                        />
+                <div className="grid gap-6 md:grid-cols-2">
+                  {[leftSkillGroups, rightSkillGroups].map((group, groupIndex) => (
+                    <div key={groupIndex} className="space-y-6">
+                      {group.map((category, catIndex) => (
+                        <div key={`${category.name}-${catIndex}`} className="space-y-4">
+                          <h3 className="font-mono text-lg text-primary flex items-center gap-2">
+                            <span className="text-terminal-green">#</span>
+                            {category.name}
+                          </h3>
+                          <div className="grid gap-3">
+                            {category.skills.map((skill, skillIndex) => (
+                              <SkillBar
+                                key={`${category.name}-${skillIndex}`}
+                                name={skill.name}
+                                level={skill.level}
+                                years={skill.years}
+                              />
+                            ))}
+                          </div>
+                        </div>
                       ))}
                     </div>
-                  </div>
-                ))
+                  ))}
+                </div>
               )}
             </div>
           )}

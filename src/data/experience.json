@@ -46,6 +46,17 @@
       "highlights": [
         "GPA: 3.4/4.0"
       ]
+    },
+    {
+      "id": "edu-002",
+      "degree": "B.A. Economics",
+      "institution": "Haramaya University",
+      "location": "Haramaya, Ethiopia",
+      "startDate": "2024",
+      "endDate": "2028",
+      "highlights": [
+        "GPA: 3.7/4.0"
+      ]
     }
   ],
   "certifications": [
