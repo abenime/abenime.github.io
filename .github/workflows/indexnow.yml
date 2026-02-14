@@ -11,7 +11,7 @@ jobs:
     steps:
       - name: Send POST request to IndexNow
         run: |
-          curl -X POST "https://api.indexnow.org/indexnow" \
+          curl -i -X POST "https://api.indexnow.org/indexnow" \
           -H "Content-Type: application/json; charset=utf-8" \
           -d '{
             "host": "abeno.me",
